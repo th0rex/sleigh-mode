@@ -11,7 +11,8 @@
 (defconst sleigh-font-lock-keywords
   (list
    '("define\\|register\\|include\\|is\\|attach\\|token" . font-lock-keyword-face)
-   '("[-+]?\\b\\(0x\\)?[0-9]*\\.?[0-9]+\\(?:[eE][-+]?[0-9]+\\)?\\b" . font-lock-constant-face)))
+   '("0x[0-9a-fA-F]*" . font-lock-constant-face)
+   '("[-+]?\\b[0-9]*" . font-lock-constant-face)))
 
 (defun sleigh-mode ()
   "Major mode for editing Ghidra Sleigh files (.slaspec, .sinc)."
