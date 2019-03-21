@@ -11,7 +11,7 @@
 (defconst sleigh-font-lock-keywords
   (list
    '("@[a-zA-Z0-9]+" . font-lock-preprocessor-face)
-   '("\\_<\\(define\\|include\\|is\\|attach\\|token\\|unimpl\\|call\\|goto\\|if\\|return\\|build\\|export\\|macro\\|local\\)\\_>" . font-lock-keyword-face)
+   '("\\_<\\(define\\|include\\|is\\|attach\\|token\\|unimpl\\|call\\|goto\\|if\\|return\\|build\\|export\\|macro\\|local\\|signed\\)\\_>" . font-lock-keyword-face)
    '("\\_<\\(sext\\|zext\\|carry\\|scarry\\|sborrow\\|nan\\|abs\\|sqrt\\|int2float\\|float2float\\|trunc\\|ceil\\|floor\\|round\\|cpool\\|newobject\\|delayslot\\)\\_>" . font-lock-builtin-face)
    '(":\\(\\s-*[$a-zA-Z0-9_.^]*\\)" . (1 font-lock-type-face))
    '("[a-zA-Z][a-zA-Z0-9_]*(" . font-lock-function-name-face)
