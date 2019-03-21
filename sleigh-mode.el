@@ -10,7 +10,8 @@
 
 (defconst sleigh-font-lock-keywords
   (list
-   '("\\_<\\(define\\|register\\|include\\|is\\|attach\\|token\\|unimpl\\)\\_>" . font-lock-keyword-face)
+   '("\\_<\\(define\\|include\\|is\\|attach\\|token\\|unimpl\\|call\\|goto\\|if\\|return\\|build\\)\\_>" . font-lock-keyword-face)
+   '("\\_<\\(sext\\|zext\\|carry\\|scarry\\|sborrow\\|nan\\|abs\\|sqrt\\|int2float\\|float2float\\|trunc\\|ceil\\|floor\\|round\\|cpool\\|newobject\\|delayslot\\)\\_>" . font-lock-builtin-face)
    '("\\_<[a-zA-Z][a-zA-Z_0-9]*=" . font-lock-variable-name-face)
    '("\\_<& [a-zA-Z][a-zA-Z_0-9]*" . font-lock-variable-name-face)
    '("0x[0-9a-fA-F]*" . font-lock-constant-face)
