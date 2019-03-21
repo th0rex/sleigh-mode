@@ -11,18 +11,20 @@
 (defconst sleigh-font-lock-keywords
   (list
    '("@[a-zA-Z0-9]+" . font-lock-preprocessor-face)
-   '("\\_<\\(define\\|include\\|is\\|attach\\|token\\|unimpl\\|call\\|goto\\|if\\|return\\|build\\|export\\|macro\\)\\_>" . font-lock-keyword-face)
+   '("\\_<\\(define\\|include\\|is\\|attach\\|token\\|unimpl\\|call\\|goto\\|if\\|return\\|build\\|export\\|macro\\|local\\)\\_>" . font-lock-keyword-face)
    '("\\_<\\(sext\\|zext\\|carry\\|scarry\\|sborrow\\|nan\\|abs\\|sqrt\\|int2float\\|float2float\\|trunc\\|ceil\\|floor\\|round\\|cpool\\|newobject\\|delayslot\\)\\_>" . font-lock-builtin-face)
-   '(":[a-zA-Z][a-zA-Z0-9_.]*" . font-lock-type-face)
-   '("\\_<[a-zA-Z][a-zA-Z0-9_]*(" . font-lock-function-name-face)
-   '("\\_<\\([a-zA-Z][a-zA-Z_0-9]*\\)=" . (1 font-lock-variable-name-face))
+   '(":\\(\\s-*[a-zA-Z0-9_.^]*\\)" . (1 font-lock-type-face))
+   '("[a-zA-Z][a-zA-Z0-9_]*(" . font-lock-function-name-face)
+   '("\\_<\\([a-zA-Z][a-zA-Z_0-9]*\\)\\(:[0-9]*\\)?=" . (1 font-lock-variable-name-face))
    '("\\_<& \\([a-zA-Z][a-zA-Z_0-9]*\\)" . (1 font-lock-variable-name-face))
+   '("\\_<<[a-zA-Z0-9_]*>\\_>" . font-lock-doc-face)
    '("0x[0-9a-fA-F]*" . font-lock-constant-face)
-   '("[-+]?\\b[0-9]+" . font-lock-constant-face)))
+   '("\b[0-9]+\b" font-lock-constant-face)))
 
 (defun sleigh-mode ()
   "Major mode for editing Ghidra Sleigh files (.slaspec, .sinc)."
   (interactive)
+  (kill-all-local-variables)
   (set (make-local-variable 'font-lock-defaults) '(sleigh-font-lock-keywords))
   (set-syntax-table sleigh-mode-syntax-table)
   (setq major-mode 'sleigh-mode)
