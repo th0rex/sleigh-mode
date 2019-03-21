@@ -18,7 +18,7 @@
    '("\\_<\\([a-zA-Z][a-zA-Z_0-9]*\\)=" . (1 font-lock-variable-name-face))
    '("\\_<& \\([a-zA-Z][a-zA-Z_0-9]*\\)" . (1 font-lock-variable-name-face))
    '("0x[0-9a-fA-F]*" . font-lock-constant-face)
-   '("[-+]?\\b[0-9]*" . font-lock-constant-face)))
+   '("[-+]?\\b[0-9]+" . font-lock-constant-face)))
 
 (defun sleigh-mode ()
   "Major mode for editing Ghidra Sleigh files (.slaspec, .sinc)."
