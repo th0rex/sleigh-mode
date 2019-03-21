@@ -22,11 +22,13 @@
   (setq major-mode 'sleigh-mode)
   (setq mode-name "Sleigh")
   (run-hooks 'sleigh-mode-hook)
+  ;; Ghetto way of enabling todo highlighting, do this properly.
+  (run-hooks 'prog-mode-hook)
   (font-lock-ensure)
   )
 
 ;;;###autoload
-(add-to-list 'auto-mode-alist '("\\.slaspec\\'" . sleigh-mode))
+(add-to-list 'auto-mode-alist '("\\.slaspec\\'\\|\\.sinc\\'" . sleigh-mode))
 
 (provide 'sleigh-mode)
 ;;; sleigh-mode.el ends here
